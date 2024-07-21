@@ -21,11 +21,13 @@ jobs:
           git checkout secondary || git checkout -b secondary
           git merge origin/secondary || true  # Merge changes from remote secondary if it exists
 
-       - name: Merge main into secondary
+     - name: Merge main into secondary
         run: |
           git merge main --allow-unrelated-histories -m "Sync changes from main to secondary"
 
       - name: Push changes
         run: |
           git push origin secondary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
