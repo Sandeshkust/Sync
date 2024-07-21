@@ -21,4 +21,4 @@ jobs:
           git checkout secondary || git checkout -b secondary
           git merge origin/secondary || true  # Merge changes from remote secondary if it exists
 
-      - name: Sync updat
+      - name: Sync update
