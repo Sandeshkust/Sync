@@ -8,7 +8,7 @@ on:
 jobs:
   sync-branches:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
@@ -20,14 +20,13 @@ jobs:
           git fetch
           git checkout secondary || git checkout -b secondary
           git merge origin/secondary || true  # Merge changes from remote secondary if it exists
-          
+
       - name: Merge main into secondary
         run: |
-          git merge main -m "Sync changes from main to secondary"
+          git merge main --allow-unrelated-histories -m "Sync changes from main to secondary"
 
       - name: Push changes
         run: |
           git push origin secondary
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       
