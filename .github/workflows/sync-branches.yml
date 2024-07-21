@@ -15,6 +15,11 @@ jobs:
         with:
           ref: main
 
+      - name: Set up Git
+        run: |
+          git config --global user.name "Sandeshkust"
+          git config --global user.email "v-skundar@microsoft.com"
+
       - name: Create or checkout secondary branch
         run: |
           git fetch

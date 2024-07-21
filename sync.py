@@ -1,6 +1,2 @@
-print("sandesh")
-print("rohan")
-
-print("sandesh")
-print("rohan")
-print("sandesh")
+x=10+10
+print(x)
