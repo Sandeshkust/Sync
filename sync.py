@@ -1,2 +1,5 @@
-x=10+10
-print(x)
+print("sandesh kundar")
+print("sandesh kundar")
+print("sandesh kundar")
+print("sandesh kundar")
+print("sandesh kundar")

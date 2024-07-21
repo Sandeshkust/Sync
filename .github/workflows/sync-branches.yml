@@ -17,7 +17,7 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name "Sandeshkust"
+          git config --global user.name "sandeshk"
           git config --global user.email "v-skundar@microsoft.com"
 
       - name: Create or checkout secondary branch
@@ -28,7 +28,14 @@ jobs:
 
       - name: Merge main into secondary
         run: |
-          git merge main --allow-unrelated-histories -m "Sync changes from main to secondary"
+          git merge main --allow-unrelated-histories -m "Sync changes from main to secondary" || true
+
+      - name: Resolve conflicts and commit
+        run: |
+          git checkout --theirs . # Accept changes from 'main'
+          git add .
+          git commit -m "Resolved merge conflicts from main into secondary"
+        continue-on-error: true
 
       - name: Push changes
         run: |
