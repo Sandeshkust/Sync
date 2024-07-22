@@ -1,8 +1,3 @@
 print("sandesh kundar")
 print("sandesh kundar")
 print("sandesh kundar")
-print("sandesh kundar")
-print("sandesh kundar")
-print("rohan")
-print("rohan")
-print("rohan")
